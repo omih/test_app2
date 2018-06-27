@@ -1,0 +1,89 @@
+ext {
+
+    support_version = '27.1.1'
+    play_version = '15.0.1'
+    dager_version = '2.16'
+    groupie_version = '2.1.0'
+    permissionsdispatcher_version = '3.2.0'
+    room_version = '1.1.0'
+    lifecycle_version = '1.1.1'
+    rxjava_version = '2.1.9'
+    joda_version = '2.10'
+    constraint_version = '1.1.2'
+    fotoapparat_version = '2.2.0'
+    cicerone_version = '3.0.0'
+    fb_version = '4.34.0'
+    junit_version = '4.12'
+    runner_version = '1.0.2'
+    espresso_version = '3.0.2'
+    LoggingInterceptor_version = '2.0.5'
+    retrofit_version = '2.4.0'
+    timber_version = '4.7.0'
+    rx_android_version = '2.0.1'
+    okhttp_version = '3.10.0'
+
+    appDependencies = [
+            appcompat_v7                   : "com.android.support:appcompat-v7:$support_version",
+            play_services_maps             : "com.google.android.gms:play-services-maps:$play_version",
+            play_services_location         : "com.google.android.gms:play-services-location:$play_version",
+            dagger                         : "com.google.dagger:dagger:$dager_version",
+            groupie                        : "com.xwray:groupie:$groupie_version",
+            permissionsdispatcher          : "com.github.hotchemi:permissionsdispatcher:$permissionsdispatcher_version",
+            room_runtime                   : "android.arch.persistence.room:runtime:$room_version",
+            design                         : "com.android.support:design:$support_version",
+            lifecycle_extensions           : "android.arch.lifecycle:extensions:$lifecycle_version",
+            rxjava                         : "io.reactivex.rxjava2:rxjava:$rxjava_version",
+            joda_time                      : "joda-time:joda-time:$joda_version",
+            constraint                     : "com.android.support.constraint:constraint-layout:$constraint_version",
+            fotoapparat                    : "io.fotoapparat.fotoapparat:library:$fotoapparat_version",
+            cicerone                       : "ru.terrakok.cicerone:cicerone:$cicerone_version",
+            fb                             : "com.facebook.android:facebook-android-sdk:$fb_version",
+            lifecycle_compiler             : "android.arch.lifecycle:compiler:$lifecycle_version",
+            permissionsdispatcher_processor: "com.github.hotchemi:permissionsdispatcher-processor:$permissionsdispatcher_version",
+            dagger_compiler                : "com.google.dagger:dagger-compiler:$dager_version"
+    ]
+
+    appTestDependencies = [
+            junit        : "junit:junit:$junit_version",
+            runner       : "com.android.support.test:runner:$runner_version",
+            espresso_core: "com.android.support.test.espresso:espresso-core:$espresso_version"
+    ]
+
+    dataDependencies = [
+            okhttp                : "com.squareup.okhttp3:okhttp:$okhttp_version",
+            retrofit              : "com.squareup.retrofit2:retrofit:$retrofit_version",
+            timber                : "com.jakewharton.timber:timber:$timber_version",
+            dagger                : "com.google.dagger:dagger:$dager_version",
+            rxjava                : "io.reactivex.rxjava2:rxjava:$rxjava_version",
+            rxandroid             : "io.reactivex.rxjava2:rxandroid:$rx_android_version",
+            converter_gson        : "com.squareup.retrofit2:converter-gson:$retrofit_version",
+            adapter_rxjava2       : "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version",
+            joda_time             : "joda-time:joda-time:$joda_version",
+            appcompat_v7          : "com.android.support:appcompat-v7:$support_version",
+            play_services_location: "com.google.android.gms:play-services-location:$play_version",
+            room_runtime          : "android.arch.persistence.room:runtime:$room_version",
+            room_compiler         : "android.arch.persistence.room:compiler:$room_version",
+            dagger_compiler       : "com.google.dagger:dagger-compiler:$dager_version",
+
+            LoggingInterceptor    : "com.github.ihsanbal:LoggingInterceptor:$LoggingInterceptor_version"
+    ]
+
+
+    dataTestDependencies = [
+            junit        : "junit:junit:$junit_version",
+            runner       : "com.android.support.test:runner:$runner_version",
+            espresso_core: "com.android.support.test.espresso:espresso-core:$espresso_version"
+    ]
+
+    modelDependencies = [
+            rxjava      : "io.reactivex.rxjava2:rxjava:$rxjava_version",
+            appcompat_v7: "com.android.support:appcompat-v7:$support_version",
+            joda_time   : "joda-time:joda-time:$joda_version"
+    ]
+
+    modelTestDependencies = [
+            junit        : "junit:junit:$junit_version",
+            runner       : "com.android.support.test:runner:$runner_version",
+            espresso_core: "com.android.support.test.espresso:espresso-core:$espresso_version"
+    ]
+}

@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.zcmx.bit.testbit"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            res.srcDirs =
+                    ['src/main/res',
+                     'src/main/res/layout/activity',
+                     'src/main/res/layout/fragment',
+                     'src/main/res/layout/item',
+                     'src/main/res/layout/dialog']
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    def deps = rootProject.ext.appDependencies
+    def depsTest = rootProject.ext.appTestDependencies
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation deps.appcompat_v7
+    implementation deps.play_services_maps
+    implementation deps.play_services_location
+    implementation deps.dagger
+    implementation deps.groupie
+    implementation(deps.permissionsdispatcher) {
+        exclude module: "support-v13"
+    }
+    implementation deps.room_runtime
+    implementation deps.design
+    implementation deps.lifecycle_extensions
+    implementation deps.rxjava
+    implementation deps.joda_time
+    implementation deps.constraint
+    implementation deps.fotoapparat
+    implementation deps.cicerone
+    implementation deps.fb
+    annotationProcessor deps.lifecycle_compiler
+    annotationProcessor deps.permissionsdispatcher_processor
+    annotationProcessor deps.dagger_compiler
+
+    testImplementation depsTest.junit
+    androidTestImplementation depsTest.runner
+    androidTestImplementation depsTest.espresso_core
+    implementation project(':data')
+    implementation project(':model')
+}

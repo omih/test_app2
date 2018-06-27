@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">test bit</string>
+    <string name="title_activity_maps">test bit</string>
+    <string name="test">Тест</string>
+    <string name="map">Карта</string>
+    <string name="list">Список</string>
+    <string name="add_photo">Приложить фото</string>
+    <string name="where_take_photo">Где возмем фотку?</string>
+    <string name="create_snapshot">Сделать снимок</string>
+    <string name="select_from_gallery">Выбрать из галереи</string>
+    <string name="skip">Пропустить</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="gps_disable_notification">Похоже что твой GPS выключен, хочешь включить его?</string>
+    <string name="facebook_app_id">505516043199647</string>
+    <string name="fb_login_protocol_scheme">fb505516043199647</string>
+
+</resources>

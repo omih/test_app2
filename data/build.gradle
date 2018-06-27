@@ -1,0 +1,68 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+
+    Properties props = new Properties()
+    props.load(rootProject.file('build.properties').newDataInputStream())
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "String", "SERVER", "${props["server"]}"
+            minifyEnabled false
+        }
+
+        release {
+            buildConfigField "String", "SERVER", "${props["server"]}"
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    def deps = rootProject.ext.dataDependencies
+    def depsTest = rootProject.ext.dataTestDependencies
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation(deps.LoggingInterceptor) {
+        exclude group: 'org.json', module: 'json'
+    }
+    implementation deps.okhttp
+    implementation deps.retrofit
+    implementation deps.timber
+    implementation deps.dagger
+    implementation deps.rxjava
+    implementation deps.rxandroid
+    implementation deps.converter_gson
+    implementation deps.adapter_rxjava2
+    implementation deps.joda_time
+    implementation deps.appcompat_v7
+    implementation deps.play_services_location
+    implementation deps.room_runtime
+    annotationProcessor deps.room_compiler
+    annotationProcessor deps.dagger_compiler
+
+    testImplementation depsTest.junit
+    androidTestImplementation depsTest.runner
+    androidTestImplementation depsTest.espresso_core
+    implementation project(path: ':model')
+}
